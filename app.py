@@ -24,7 +24,7 @@ def add_task():
     try:
         task_description = request.form.get('title')
         priority = get_priority(task_description)
-        task = {'description': task_description, 'priority': priority}
+        task = {'title': task_description, 'priority': priority}
         return jsonify(task)
     except Exception as e:
         app.logger.error("Error processing request: %s", e)
